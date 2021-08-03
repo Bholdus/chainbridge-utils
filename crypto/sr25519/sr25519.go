@@ -27,7 +27,7 @@ func GenerateKeypair(network uint8) (*Keypair, error) {
 	return NewKeypairFromSeed("//"+hexutil.Encode(data), network)
 }
 
-func NewKeypairFromSeed(seed, network uint8) (*Keypair, error) {
+func NewKeypairFromSeed(seed string, network uint8) (*Keypair, error) {
 	kp, err := signature.KeyringPairFromSecret(seed, network)
 	return &Keypair{&kp}, err
 }
