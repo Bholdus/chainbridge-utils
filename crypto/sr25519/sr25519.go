@@ -18,7 +18,7 @@ type Keypair struct {
 	keyringPair *signature.KeyringPair
 }
 
-func GenerateKeypair(uint8 string) (*Keypair, error) {
+func GenerateKeypair(network uint8) (*Keypair, error) {
 	data := make([]byte, 32)
 	_, err := rand.Read(data)
 	if err != nil {
